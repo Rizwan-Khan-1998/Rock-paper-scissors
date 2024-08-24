@@ -238,7 +238,7 @@ ul {
   background-image: url(./images/Group\ 5.png);
   display: grid;
   place-content: center;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
   color: white;
 }
@@ -359,6 +359,9 @@ ul {
   }
   .rules-container h1 {
     font-size: 4rem;
+  }
+   .hurray-container {
+    background-position: center top;
   }
 
   .close-btn {
