@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon-img.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <div class="hurray-container hide">
+      <div class="hurray">
+        <div class="img-container">
+          <img src="./images/Vector (3).png" alt="" />
+        </div>
+        <h1>HURRAY!</h1>
+        <p>YOU WON THE GAME</p>
+      </div>
+    </div>
+
+    <div class="game-board">
+      <div class="top">
+        <div class="game-name">
+          <h1>
+            Rock <br />
+            Paper <br />
+            Scissors
+          </h1>
+        </div>
+        <div class="scores">
+          <div class="player">
+            <p>
+              Computer <br />
+              Score
+            </p>
+            <h1 class="com-score number">0</h1>
+          </div>
+          <div class="player">
+            <p>
+              Your <br />
+              Score
+            </p>
+            <h1 class="your-score number">0</h1>
+          </div>
+        </div>
+      </div>
+      <div class="triangle-container">
+        <div class="triangle">
+          <div class="top-row">
+            <div class="option rock" id="rock">
+              <img src="./images/icons8-fist-67 1.png" alt="" />
+            </div>
+            <div class="option paper" id="paper">
+              <img src="./images/icons8-hand-64 1.png" alt="" />
+            </div>
+          </div>
+          <div class="bottom-row">
+            <div class="option scissor" id="scissors">
+              <img src="./images/17911 1.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="results-container hide">
+        <div class="result-announced">
+          <h1></h1>
+          <p></p>
+          <button>PLAY AGAIN</button>
+        </div>
+      </div>
+    </div>
+    <div class="rules-container">
+      <h1 class="rules-heading">Game Rules</h1>
+      <div class="rules-list">
+        <div>
+          <img src="./images/Rectangle 5.png" alt="" />Rock beats scissors,
+          scissors beat paper, and paper beats rock.
+        </div>
+
+        <div>
+          <img src="./images/Rectangle 5.png" alt="" />
+          Agree ahead of time whether you’ll count off “rock, paper, scissors,
+          shoot” or just “rock, paper, scissors.”
+        </div>
+        <div>
+          <img src="./images/Rectangle 5.png" alt="" />
+          Use rock, paper, scissors to settle minor decisions or simply play to
+          pass the time
+        </div>
+
+        <div>
+          <img src="./images/Rectangle 5.png" alt="" />
+          If both players lay down the same hand, each player lays down another
+          hand
+        </div>
+      </div>
+      <div class="close-btn">X</div>
+    </div>
+    <button id="rules-btn">Rules</button>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,376 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #8cc461;
+  font-family: "Roboto", sans-serif;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  border: 3px solid white;
+  border-radius: 12px;
+  padding: 0em 1em;
+}
+
+.scores {
+  display: flex;
+  background: inherit;
+  gap: 1.2rem;
+}
+
+.game-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+}
+
+.player {
+  width: 9rem;
+  height: 9rem;
+  background-color: white;
+  border-radius: 12px;
+  text-align: center;
+  display: grid;
+  place-content: center;
+}
+
+.player p {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #656565;
+}
+
+.number {
+  font-size: 4rem;
+}
+
+.game-board {
+  width: 100%;
+  max-width: 800px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+  padding-top: 5vh;
+}
+
+.option {
+  width: 8rem;
+  height: 8rem;
+  display: grid;
+  place-content: center;
+  background: url(./images/Ellipse\ 1.png) no-repeat center;
+  background-size: cover;
+  border-radius: 50%;
+}
+.triangle-container {
+  margin: auto;
+  padding-top: 10%;
+  flex-grow: 1;
+}
+
+.triangle {
+  width: 25rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.top-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.top-row::before {
+  content: "";
+  width: 90%;
+  height: 1.5rem;
+  background-color: rgba(16, 15, 15, 0.85);
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  z-index: -100;
+}
+.triangle::before {
+  content: "";
+  height: 70%;
+  width: 1.5rem;
+  background-color: rgba(16, 15, 15, 0.85);
+  position: absolute;
+  z-index: -100;
+  left: 25%;
+  transform: rotateZ(-30deg);
+}
+.triangle::after {
+  content: "";
+  height: 70%;
+  width: 1.5rem;
+  background-color: rgba(16, 15, 15, 0.85);
+  position: absolute;
+  right: 25%;
+  z-index: -100;
+  transform: rotateZ(30deg);
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-15%);
+}
+
+.option {
+  width: 8rem;
+  height: 8rem;
+  display: grid;
+  place-content: center;
+  background: url(./images/Ellipse\ 1.png) no-repeat center;
+  background-size: cover;
+  border-radius: 50%;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+
+.rock {
+  border: 1rem solid #0074b6;
+}
+
+.paper {
+  border: 1rem solid #bd00ff;
+}
+
+.scissor {
+  border: 1rem solid #ffa943;
+}
+
+ul {
+  list-style: none;
+}
+
+.rules-container {
+  width: 18rem;
+  background: #004429;
+  border-radius: 13px;
+  border: 7px;
+  padding: 1rem 0.5rem 1rem 1.5rem;
+  position: absolute;
+  bottom: 5rem;
+  right: 2rem;
+  border: 4px solid white;
+  color: white;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.rules-container.active {
+  opacity: 1;
+}
+
+.rules-container h1 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.rules-list div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+#rules-btn {
+  height: 1rem;
+  background-color: inherit;
+  border: 2px solid white;
+  position: absolute;
+  border-radius: 8px;
+  padding: 0.6em 0.6em;
+  display: grid;
+  place-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+  bottom: 1rem;
+  right: 4rem;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+#rules-btn:active,
+.close-btn:active {
+  transform: scale(1.1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.1rem;
+  background-color: inherit;
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 0.6em 0.6em;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.hurray-container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./images/Group\ 5.png);
+  display: grid;
+  place-content: center;
+  background-position: center top;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.img-container {
+  width: 100%;
+  display: grid;
+  place-content: center;
+}
+.hurray h1 {
+  font-size: 8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.results-container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  margin: auto;
+}
+
+.result-announced {
+  flex-grow: 1;
+  text-align: center;
+  color: white;
+}
+.result-announced h1 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+}
+.result-announced p {
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+.result-announced button {
+  margin: 1rem auto;
+  border-radius: 9px;
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1em;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border: 0;
+}
+
+.option.winner {
+  box-shadow: 0 0 0 3rem rgba(2, 40, 2, 0.1), 0 0 0 3rem rgba(13, 129, 13, 0.3),
+    0 0 0 2rem rgba(49, 183, 49, 0.4);
+  z-index: -100;
+}
+
+.hurray p {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.game-board.hide {
+  display: none;
+}
+.rules-container.hide {
+  display: none;
+}
+.triangle-container.hide {
+  display: none;
+}
+.results-container.hide {
+  display: none;
+}
+
+.hurray-container.hide {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 9px;
+  }
+
+ 
+
+  .triangle {
+    width: 30rem;
+    height: 30rem;
+  }
+  .rules-container {
+    width: 100vw;
+    height: 75vh;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+    border: 0;
+    transform: translateY(100%);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .rules-container.active {
+    transform: translateY(0%);
+  }
+
+  .rules-list div {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem 2rem 3rem;
+    gap: 2rem;
+    font-size: 2rem;
+  }
+  .rules-container h1 {
+    font-size: 4rem;
+  }
+
+  .close-btn {
+    font-size: 2rem;
+  }
+
+  #rules-btn {
+    font-size: 3rem;
+  }
+  .option.winner {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 6rem rgba(2, 40, 2, 0.1),
+      0 0 0 8rem rgba(13, 129, 13, 0.3), 0 0 0 10rem rgba(49, 183, 49, 0.4);
+  }
+}
